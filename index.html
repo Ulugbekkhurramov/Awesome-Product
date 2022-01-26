@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="product-card">
+        <h1>Original phones</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <div class="product-pic"></div>
+        <div class="product-colors">
+            <span class="blue active"  data-color="#30336b" data-pic="url(12problue.png)"></span>
+            <span class="green" data-color="#535c68" data-pic="url(12proGraphite.png)"></span>
+            <span class="yellow" data-color="#ffbe76" data-pic="url(12progold.png)"></span>
+            <span class="pink" data-color="#95afc0" data-pic="url(12prowhite.png)"></span>
+        </div>
+        <div class="product-info">
+            <div class="product-price">$1200</div>
+            <a href="#" class="product-button">Add to Cart</a>
+        </div>
+    </div>
+
+    <script>
+        $(".product-colors span").click(function() {
+            $(".product-colors span").removeClass("active");
+            $(this).addClass("active");
+            $("body").css("background", $(this).attr("data-color"));
+            $(".product-price").css("color",$(this).attr("data-color"));
+            $(".product-button").css("color",$(this).attr("data-color"));
+            $(".product-pic").css("background-image",$(this).attr("data-pic"));
+            // $(".product-card").css("background-color",$(this).attr("data-color"))
+        })
+    </script>
+</body>
+</html>
